@@ -2,5 +2,9 @@
 
 
 <!--TODO do it with structural directive-->
-<app-task></app-task>
-<app-task></app-task>
+<app-task
+[task]='task1'
+(deleteTaskEmitter)="taskDeleteReceiver($event)"
+></app-task>
+<app-task [task]='task2'></app-task>
+<app-task [task]='task3'></app-task>

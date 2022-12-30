@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { iTask } from '../models/interfaces/Task.interface';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { ITask } from '../models/interfaces/Task.interface';
 
 @Component({
   selector: 'app-task',
@@ -10,11 +10,14 @@ export class TaskComponent {
 
   /* Here angular strict mode make to initialized the avriables,
   so instead of that, it is placed |undefined so it can be used*/
-  @Input() task: iTask | undefined;
+  @Input() task: ITask | undefined;
+
+  @Output() deleteTaskEmitter: EventEmitter<ITask> = new EventEmitter<ITask>();
 
   deleteTask(){
     // ? must be implemented if not it throws an error
-    console.log("Delete task", this.task?.title)
+    console.log("Delete task", this.task?.title);
+    this.deleteTaskEmitter.emit(this.task);
   }
 
 }

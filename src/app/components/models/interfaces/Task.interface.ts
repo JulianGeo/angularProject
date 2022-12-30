@@ -4,7 +4,7 @@ export enum Levels {
   "Blocking"
 }
 
-export interface iTask {
+export interface ITask {
   title: string;
   description?: string;
   completed: boolean;

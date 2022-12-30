@@ -1,0 +1,6 @@
+<!--TODO: refactor with structural directives and conditional styling-->
+<h5>Title: {{task?.title}}</h5>
+<h6>Description: {{task?.description}}</h6>
+<p>Status: {{task?.completed? 'Finished':'Unfinished'}}</p>
+
+<button (click)="deleteTask()">Delete task</button>
